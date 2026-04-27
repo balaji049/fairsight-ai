@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Mono&display=swap');
+/* Fallback stack if Google Sans not available */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono&display=swap');
+
+:root {
+  /* Google brand colors */
+  --blue:   #1A73E8;
+  --blue-dk:#1557B0;
+  --blue-lt:#E8F0FE;
+  --green:  #0F9D58;
+  --green-lt:#E6F4EA;
+  --red:    #D93025;
+  --red-lt: #FCE8E6;
+  --amber:  #F29900;
+  --amber-lt:#FEF7E0;
+  --grey-50: #F8F9FA;
+  --grey-100:#F1F3F4;
+  --grey-200:#E8EAED;
+  --grey-300:#DADCE0;
+  --grey-500:#9AA0A6;
+  --grey-700:#5F6368;
+  --grey-900:#202124;
+  --white:  #FFFFFF;
+  --shadow-1: 0 1px 2px rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+  --shadow-2: 0 1px 3px rgba(60,64,67,.3), 0 4px 8px 3px rgba(60,64,67,.15);
+  --shadow-3: 0 4px 8px rgba(60,64,67,.3), 0 8px 16px 6px rgba(60,64,67,.15);
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --font: 'DM Sans', 'Google Sans', sans-serif;
+  --font-mono: 'DM Mono', 'Google Sans Mono', monospace;
+  --transition: 200ms cubic-bezier(.2,0,0,1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background: var(--grey-50);
+  color: var(--grey-900);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--grey-300); border-radius: 3px; }
+
+/* Utility classes */
+.flex   { display: flex; }
+.col    { flex-direction: column; }
+.gap-4  { gap: 4px; }
+.gap-8  { gap: 8px; }
+.gap-12 { gap: 12px; }
+.gap-16 { gap: 16px; }
+.gap-24 { gap: 24px; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.wrap   { flex-wrap: wrap; }
+.grid2  { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.grid3  { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+.w-full { width: 100%; }
+.text-secondary { color: var(--grey-700); }
+.text-small { font-size: 12px; }
+.text-mono { font-family: var(--font-mono); }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Fade-in animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50%      { opacity: .5; }
+}
+
+.animate-fade { animation: fadeUp 300ms cubic-bezier(.2,0,0,1) both; }
+.animate-fade-delay-1 { animation-delay: 60ms; }
+.animate-fade-delay-2 { animation-delay: 120ms; }
+.animate-fade-delay-3 { animation-delay: 180ms; }
+.animate-fade-delay-4 { animation-delay: 240ms; }
